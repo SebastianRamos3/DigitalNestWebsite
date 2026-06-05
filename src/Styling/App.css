@@ -17,12 +17,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
-.links {
-  display: flex;
-  flex-direction: column;
+.link-list .link {
+  display: inline-flex;
   align-items: center;
+  color: #0f172a; 
+  text-decoration: none;
+  font-size: 1.10rem;
+  margin-top: 15px;
+  padding: 12px 60px;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  background-color: #006D5B;
+  border: 1px solid #006D5B;
+  position: relative;
+  overflow: hidden;
+  width: 100%; 
 }
+
+.link-list .link:hover {
+  background-color: #4DD9C0;
+  border-color: #4DD9C0;
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(14, 165, 233, 0.2);
+}
+
 .name {
   font-size: 20px;
   color: black;
