@@ -1,9 +1,9 @@
-import AvatarImage from './Assets/Avatar.jpg'
+import AvatarImage from './Assets/Avatar.webp'
 import Resume from './Assets/SebRam14.pdf'
-import { useState } from 'react'
 import './Styling/App.css'
 import './Styling/back.css'
-
+import { useState } from 'react'
+// backgrounds needs 8 ball divs, probably shouldve done a loop
 function Background() {
   return (
     <div className="background">
@@ -30,7 +30,7 @@ function Profile() {
 }
 function Avatar() {
   return (
-    <img className="avatar" src={AvatarImage} alt="Avatar" />
+    <img className="avatar" src={AvatarImage} alt="Sebastian Ramos" />
   )
 }
 
@@ -48,13 +48,13 @@ function Links({label, url,showDownload, showCopy}) {
       <div className='link-row'>
         {showDownload && 
           (
-            <a href={url} download>
+            <a href={url} download aria-label="Download resume">
               <button className='actionButton'>⬇</button>
             </a>
           )
         }
         {showCopy && 
-          <button className='actionButton' onClick={handleCopy}>
+          <button className='actionButton' onClick={handleCopy} aria-label="Copy link">
             {copied ? '✓' : '⎘'}             
           </button>
         }

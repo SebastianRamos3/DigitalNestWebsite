@@ -1,9 +1,9 @@
-* {
+*{
     box-sizing: border-box;
-  }  
-  html, body {
+}  
+html, body {
     background: #4CB8B6;
-  }
+}
 .app {
   display: flex;
   flex-direction: column;
@@ -12,6 +12,12 @@
   position: relative;        
   z-index: 1;               
   min-height: 100vh;         
+}
+
+:focus-visible {
+  outline: 2px solid #006D5B;
+  outline-offset: 3px;
+  border-radius: 8px;
 }
 .profile {
   display: flex;
@@ -33,26 +39,25 @@
   margin-top: 15px;
   width: 100%;
 }
-
-.link-list .link {
+/* Stole this animation too  */
+.link {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0f172a;
-  text-decoration: none;
-  font-size: 1.10rem;
-  font-family: Georgia, sans-serif;
+  flex: 1;
   padding: 12px 20px;
   border-radius: 12px;
-  transition: all 0.4s ease;
-  background-color: #006D5B;
   border: 1px solid #006D5B;
-  position: relative;
+  background-color: #006D5B;
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-family: Georgia, sans-serif;
+  text-decoration: none;
   overflow: hidden;
-  flex: 1;
+  transition: all 0.4s ease;
 }
 
-.link-list .link:hover {
+.link:hover {
   background-color: #4CB8B6;
   border-color: #006D5B;
   transform: translateX(10px);
@@ -66,8 +71,13 @@
   border-radius: 8px;
   background-color: #006D5B;
   font-size: 1.4rem;
-}
+  transition: all 0.3s ease;
 
+}
+.actionButton:hover {
+  background-color: #4CB8B6;
+  border-color: #006D5B;
+}
 .name {
   font-size: 29px;
   color: black;
