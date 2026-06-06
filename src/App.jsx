@@ -1,8 +1,9 @@
-import AvatarImage from './Assets/Avatar.jpg'
+import AvatarImage from './Assets/Avatar.webp'
 import Resume from './Assets/SebRam14.pdf'
 import './Styling/App.css'
 import './Styling/back.css'
-
+import { useState } from 'react'
+// backgrounds needs 8 ball divs, probably shouldve done a loop
 function Background() {
   return (
     <div className="background">
@@ -23,22 +24,44 @@ function Profile() {
     <div className="profile">
       <Avatar />
       <h1 className="name"> Sebastian Ramos</h1>
-      <p className="description">I am a software engineer</p>
+      <p className="description">Hello, I am a Software Engineer.<br />I love to read, golf, and play CSGO. </p>
     </div>
   )
 }
 function Avatar() {
   return (
-    <img className="avatar" src={AvatarImage} alt="Avatar" />
+    <img className="avatar" src={AvatarImage} alt="Sebastian Ramos" />
   )
 }
 
-function Links({label, url}) {
+function Links({label, url,showDownload, showCopy}) {
+  const [copied,setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className='link-list'>
-      <a className="link" href={url} target="_blank" rel="noreferrer">
-      {label}
-      </a>
+      <div className='link-row'>
+        {showDownload && 
+          (
+            <a href={url} download aria-label="Download resume">
+              <button className='actionButton'>⬇</button>
+            </a>
+          )
+        }
+        {showCopy && 
+          <button className='actionButton' onClick={handleCopy} aria-label="Copy link">
+            {copied ? '✓' : '⎘'}             
+          </button>
+        }
+        <a className="link" href={url} target="_blank" rel="noreferrer" >
+          {label}
+        </a>
+      </div>
     </div>
   )
 }
@@ -50,10 +73,10 @@ export default function App() {
       <Background />
       <div className="app">
         <Profile />
-          <div className="links">
-            <Links label="LinkedIn" url="https://www.linkedin.com/in/sebastianvramos/" />
-            <Links label="GitHub" url="https://github.com/SebastianRamos3"/>
-            <Links label="Resume" url={Resume} />
+          <div>
+            <Links label="LinkedIn" url="https://www.linkedin.com/in/sebastianvramos/"  showCopy={true}/>
+            <Links label="GitHub" url="https://github.com/SebastianRamos3" showCopy={true}/>
+            <Links label="Resume" url={Resume} showDownload={true}  />
           </div>
       </div>
     </>

@@ -1,9 +1,9 @@
-* {
+*{
     box-sizing: border-box;
-  }  
-  html, body {
+}  
+html, body {
     background: #4CB8B6;
-  }
+}
 .app {
   display: flex;
   flex-direction: column;
@@ -13,39 +13,75 @@
   z-index: 1;               
   min-height: 100vh;         
 }
+
+:focus-visible {
+  outline: 2px solid #006D5B;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
 .profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
 }
-.link-list .link {
-  display: inline-flex;
+.link-list {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  color: #0f172a; 
-  text-decoration: none;
-  font-size: 1.10rem;
-  margin-top: 15px;
-  padding: 12px 60px;
-  border-radius: 12px;
-  transition: all 0.4s ease;
-  background-color: #006D5B;
-  border: 1px solid #006D5B;
-  position: relative;
-  overflow: hidden;
-  width: 100%; 
 }
 
-.link-list .link:hover {
-  background-color: #4DD9C0;
-  border-color: #4DD9C0;
+.link-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  width: 100%;
+}
+/* Stole this animation too  */
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid #006D5B;
+  background-color: #006D5B;
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-family: Georgia, sans-serif;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.link:hover {
+  background-color: #4CB8B6;
+  border-color: #006D5B;
   transform: translateX(10px);
   box-shadow: 0 5px 15px rgba(14, 165, 233, 0.2);
 }
 
+.actionButton {
+  width: 43px;
+  height: 43px;
+  border: 1px solid #006D5B;
+  border-radius: 8px;
+  background-color: #006D5B;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+
+}
+.actionButton:hover {
+  background-color: #4CB8B6;
+  border-color: #006D5B;
+}
 .name {
-  font-size: 20px;
+  font-size: 29px;
   color: black;
+  font-family: 'Lato', sans-serif;
 }
 .avatar {
     width: 125px;
@@ -59,7 +95,8 @@
 }
 .description {
   font-size: 16px;
+  font-family: Georgia, sans-serif;
   margin: 0;
   margin-bottom: 16px;
-  color: #FFFFFF;
+  color: black;
 }
