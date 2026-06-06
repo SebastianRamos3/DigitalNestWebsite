@@ -42,7 +42,7 @@ In JavaScript, `&&` is a glorified if/else statement. It returns the right side 
 
 ---
 
-## Next Additions
+## Next Parts
 
 - **Custom domain** — something like `sebastianramos.dev` for a better looking url
 - **Portfolio page** — once I have an actual page I would like to link it here. Or ill just add my projects to this site directly 
